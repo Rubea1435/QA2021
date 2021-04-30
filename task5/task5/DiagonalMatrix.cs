@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace task5
 {
     class DiagonalMatrix : SquareMatrix
     {
-        public DiagonalMatrix (int size) : base(size)
+        public DiagonalMatrix (int size) : base()
         {
+            Size = size;
             data = new int[size]; // only diagonal elements
         }
 
@@ -17,17 +14,31 @@ namespace task5
         {
             get
             {
+                if (index1 > Size || index2 > Size)
+                    throw new Exception("Index is more than size of matrix");
+                if (index1 < 0 || index2 < 0)
+                    throw new Exception("Index is negative");
                 if (index1 == index2)
                     return data[index1];
                 else return 0;
             }
             set
             {
-                if (index1 == index2)
-                {
-                    data[index1] = value;
-                }
+                if (index1 > Size || index2 > Size)
+                    throw new Exception("Index is more than size of matrix");
+                if (index1 < 0 || index2 < 0)
+                    throw new Exception("Index is negative");
+                if (index1 != index2)
+                    throw new Exception("Indexes are not equal");                        
+                data[index1] = value;
             }
+        }
+
+        public override void InitializeRandom(int from, int to)
+        {
+            Random rnd = new Random();
+            for (int i = 0; i < Size; i++)
+                    this[i, i] = rnd.Next(from, to);
         }
     }
 }

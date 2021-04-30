@@ -1,39 +1,45 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace task5
 {
     class SquareMatrix
     {
-        public int Size { get; }
+        public int Size { get; protected set; }
         protected int[] data;
+
+        public SquareMatrix() { }
 
         public SquareMatrix(int size)
         {
             Size = size;
-            data = new int[size * size];
-            for (int i = 0; i < size * size; i++)
-            {
-                data[i] = 0;
-            }
+            int massiveLength = Size * Size;
+            data = new int[massiveLength];
         }
 
         public virtual int this[int index1, int index2]
         {
             get
             {
+                if (index1 > Size || index2 > Size)
+                    throw new Exception("Index is more than size of matrix");
+                if (index1 < 0 || index2 < 0)
+                    throw new Exception("Index is negative");
                 return data[index1 * Size + index2];
             }
             set
             {
+                if (index1 > Size || index2 > Size)
+                    throw new Exception("Index is more than size of matrix");
+                if (index1 < 0 || index2 < 0)
+                    throw new Exception("Index is negative");
                 data[index1 * Size + index2] = value;
             }
+                
         }
 
-        public void InitializeRandom(int from, int to)
+        public virtual void InitializeRandom(int from, int to)
         {
             Random rnd = new Random();
             for (int i = 0; i < Size; i++)
@@ -61,6 +67,21 @@ namespace task5
                     Console.Write(this[i, j].ToString().PadLeft(GetMaxNumberofDigits()) + " ");
                 Console.Write('\n');
             }
+        }
+
+        public override string ToString() 
+        {
+            StringBuilder matrixString = new StringBuilder();
+            for (int i = 0; i < Size; i++)
+            {
+                for (int j = 0; j < Size; j++)
+                {
+                    matrixString.Append(this[i, j]);
+                    matrixString.Append(" ");
+                }
+                matrixString.Append("\n");
+            }
+            return matrixString.ToString();
         }
     }
 }

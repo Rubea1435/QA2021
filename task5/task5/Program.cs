@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace task5
 {
@@ -13,12 +9,21 @@ namespace task5
             int size = 3;
             SquareMatrix squareMatrix = new SquareMatrix(size);
             squareMatrix.InitializeRandom(0, 50);
-            squareMatrix.Print();
+            string str1 = squareMatrix.ToString();
+            Console.Write(str1);            
 
             DiagonalMatrix diagonalMatrix = new DiagonalMatrix(size);
-            diagonalMatrix.InitializeRandom(0, 20);
+            try
+            {
+                diagonalMatrix.InitializeRandom(0, 20);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"error: {e.Message}");
+            }
             Console.WriteLine();
-            diagonalMatrix.Print();
+            string str2 = diagonalMatrix.ToString();
+            Console.Write(str2);
         }
     }
 }
