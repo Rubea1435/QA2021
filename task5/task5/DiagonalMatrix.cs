@@ -2,15 +2,15 @@
 
 namespace task5
 {
-    class DiagonalMatrix : SquareMatrix
+    class DiagonalMatrix<T> : SquareMatrix<T>
     {
         public DiagonalMatrix (int size) : base()
         {
             Size = size;
-            data = new int[size]; // only diagonal elements
+            data = new T[size]; // only diagonal elements
         }
 
-        public override int this[int index1, int index2]
+        public override T this[int index1, int index2]
         {
             get
             {
@@ -20,7 +20,7 @@ namespace task5
                     throw new Exception("Index is negative");
                 if (index1 == index2)
                     return data[index1];
-                else return 0;
+                else return default(T);
             }
             set
             {
@@ -34,11 +34,12 @@ namespace task5
             }
         }
 
-        public override void InitializeRandom(int from, int to)
+        // unfortunatelly it doesn't work with generics
+        /*public override void InitializeRandom(int from, int to)
         {
             Random rnd = new Random();
             for (int i = 0; i < Size; i++)
                     this[i, i] = rnd.Next(from, to);
-        }
+        }*/
     }
 }

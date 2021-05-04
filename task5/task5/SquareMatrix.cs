@@ -4,10 +4,10 @@ using System.Text;
 
 namespace task5
 {
-    class SquareMatrix
+    class SquareMatrix<T>
     {
         public int Size { get; protected set; }
-        protected int[] data;
+        protected T[] data;
 
         public SquareMatrix() { }
 
@@ -15,10 +15,10 @@ namespace task5
         {
             Size = size;
             int massiveLength = Size * Size;
-            data = new int[massiveLength];
+            data = new T[massiveLength];
         }
 
-        public virtual int this[int index1, int index2]
+        public virtual T this[int index1, int index2]
         {
             get
             {
@@ -39,15 +39,17 @@ namespace task5
                 
         }
 
-        public virtual void InitializeRandom(int from, int to)
+        // unfortunatelly it doesn't work with generics
+        /*public virtual void InitializeRandom(int from, int to)
         {
             Random rnd = new Random();
             for (int i = 0; i < Size; i++)
                 for (int j = 0; j < Size; j++)
                     this[i, j] = rnd.Next(from, to);
-        }
+        }*/
 
-        private int GetMaxNumberofDigits() // max number of digits in all elements of matrix (for Print formatting)
+        // unfortunatelly it doesn't work with generics
+        /*private int GetMaxNumberofDigits() // max number of digits in all elements of matrix (for Print formatting) 
         {
             int number = 0;
             int element = data.Max();
@@ -57,14 +59,14 @@ namespace task5
                 number++;
             }
             return number;
-        }
+        }*/
 
         public void Print()
         {
             for (int i = 0; i < Size; i++)
             {
                 for (int j = 0; j < Size; j++)
-                    Console.Write(this[i, j].ToString().PadLeft(GetMaxNumberofDigits()) + " ");
+                    Console.Write(this[i, j].ToString() + " ");
                 Console.Write('\n');
             }
         }
