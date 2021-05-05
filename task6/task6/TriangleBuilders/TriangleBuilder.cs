@@ -19,15 +19,15 @@ namespace task6
             if (Math.Abs((side1X * side2X) + (side1Y * side2Y)) < double.Epsilon ||   // scalar product, condition of orthogonality
                 Math.Abs((side1X * side3X) + (side1Y * side3Y)) < double.Epsilon ||
                 Math.Abs((side2X * side3X) + (side2Y * side3Y)) < double.Epsilon)
-                return new RightTriangle(point1, point2, point3, Triangle.Colours.green);
+                return new RightTriangle(point1, point2, point3, Colour.green);
             else if (Math.Abs(point1.Distance(point2) - point1.Distance(point3)) < double.Epsilon &&
                 Math.Abs(point1.Distance(point2) - point2.Distance(point3)) < double.Epsilon)
-                return new EquilateralTriangle(point1, point2, point3, Triangle.Colours.red);
+                return new EquilateralTriangle(point1, point2, point3, Colour.red);
             else if (Math.Abs(point1.Distance(point2) - point1.Distance(point3)) < double.Epsilon ||
                 Math.Abs(point1.Distance(point2) - point2.Distance(point3)) < double.Epsilon ||
                 Math.Abs(point1.Distance(point3) - point2.Distance(point3)) < double.Epsilon)
-                return new IsoscelesTriangle(point1, point2, point3, Triangle.Colours.blue);
-            else return new JustTriangle(point1, point2, point3, Triangle.Colours.white);
+                return new IsoscelesTriangle(point1, point2, point3, Colour.blue);
+            else return new JustTriangle(point1, point2, point3, Colour.white);
         }
     }
 }

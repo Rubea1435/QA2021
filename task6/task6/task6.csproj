@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Colour.cs" />
     <Compile Include="Point.cs" />
     <Compile Include="Triangles\EquilateralTriangle.cs" />
     <Compile Include="TriangleBuilders\EquilateralTriangleBuilder.cs" />

@@ -4,7 +4,7 @@ namespace task6
 {
     class IsoscelesTriangle : Triangle
     {
-        public IsoscelesTriangle(Point point1, Point point2, Point point3, Colours colour) : base(point1, point2, point3, colour)
+        public IsoscelesTriangle(Point point1, Point point2, Point point3, Colour colour) : base(point1, point2, point3, colour)
         {
         }
 
