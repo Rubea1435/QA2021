@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace task7
 {
@@ -21,8 +17,12 @@ namespace task7
             Model = model;
             BodyType = bodyType;
             EngineType = engineType;
-            EngineSize = engineSize;
-            Price = price;
+            if (engineSize > 0.0)
+                EngineSize = engineSize;
+            else throw new ArgumentOutOfRangeException();
+            if (price > 0)
+                Price = price;
+            else throw new ArgumentOutOfRangeException();
         }
     }
 }
