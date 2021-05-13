@@ -43,13 +43,28 @@ namespace task7
             Console.WriteLine("maximum engine size: " + maxEngineSize);
             Console.WriteLine("maximum price: " + maxPrice);
 
+            // -------------------------------------------------------------
+            Console.WriteLine("\nUsing LINQ:"); 
             List<Car> carsForLinq = new List<Car>();
             for (int i = 0; i < AtlantM.GetCount(); i++)
                 carsForLinq.Add(AtlantM[i]);
 
-            var res = carsForLinq.Select(x => x.Model).ToList();
-            foreach (var item in res)
-                Console.WriteLine(item.GetTypeCode());
+            var averageEngineSizeLinq = carsForLinq.Select(x => x.EngineSize).Average();
+            var averagePriceLinq = carsForLinq.Select(x => x.Price).Average();
+            Console.WriteLine("average engine size: " + averageEngineSizeLinq);
+            Console.WriteLine("average price: " + averagePriceLinq);
+
+            var landRoverAmountLinq = carsForLinq.Where(x => x.Brand == CarBrand.LandRover).Count();
+            var cheapCarsAmountLinq = carsForLinq.Where(x => x.Price < limitPrice).Count();
+            var allAmountLinq = carsForLinq.Count();
+            Console.WriteLine("quantity of Land Rovers: " + landRoverAmountLinq);
+            Console.WriteLine($"quantity of cars cheaper than {limitPrice}: " + cheapCarsAmountLinq);
+            Console.WriteLine("quantity of all items: " + allAmountLinq);
+
+            var maxEngineSizeLinq = carsForLinq.Select(x => x.EngineSize).Max();
+            var maxPriceLinq = carsForLinq.Select(x => x.Price).Max();
+            Console.WriteLine("maximum engine size: " + maxEngineSizeLinq);
+            Console.WriteLine("maximum price: " + maxPriceLinq);
         }
     }
 }
