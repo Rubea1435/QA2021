@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace task7
 {
@@ -21,25 +22,34 @@ namespace task7
             AtlantM.AddCar(automobile2);
             Console.WriteLine(AtlantM[0].Brand); // indexator testing, to make list of cars private
 
-            Func<Car, double> f1 = GetEngineSize;
-            double averageEngineSize = AtlantM.GetAverage(f1);
+            Func<Car, double> getEngineSize = GetEngineSize;
+            double averageEngineSize = AtlantM.GetAverage(getEngineSize);
             double averagePrice = AtlantM.GetAverage(GetPrice); // without explicit delegate
             Console.WriteLine("average engine size: " + averageEngineSize);
             Console.WriteLine("average price: " + averagePrice);
 
-            Func<Car, CarBrand, bool> f2 = IsBrand; 
-            int landRoverAmount = AtlantM.GetCount<CarBrand>(f2, CarBrand.LandRover);
+            Func<Car, CarBrand, bool> isBrand = IsBrand; 
+            int landRoverAmount = AtlantM.GetCount<CarBrand>(isBrand, CarBrand.LandRover);
             int limitPrice = 3000;
             int cheapCarsAmount = AtlantM.GetCount(IsPriceLess, limitPrice); // without explicit delegate
             int allAmount = AtlantM.GetCount();
             Console.WriteLine("quantity of Land Rovers: " + landRoverAmount);
-            Console.WriteLine("quantity of cars cheaper than {0}: " + cheapCarsAmount, limitPrice);
+            //Console.WriteLine("quantity of cars cheaper than {0}: " + cheapCarsAmount, limitPrice);
+            Console.WriteLine($"quantity of cars cheaper than {limitPrice}: " + cheapCarsAmount);
             Console.WriteLine("quantity of all items: " + allAmount);
 
-            double maxEngineSize = AtlantM.GetMax(f1);
+            double maxEngineSize = AtlantM.GetMax(getEngineSize);
             int maxPrice = (int)AtlantM.GetMax(GetPrice);
             Console.WriteLine("maximum engine size: " + maxEngineSize);
             Console.WriteLine("maximum price: " + maxPrice);
+
+            List<Car> carsForLinq = new List<Car>();
+            for (int i = 0; i < AtlantM.GetCount(); i++)
+                carsForLinq.Add(AtlantM[i]);
+
+            var res = carsForLinq.Select(x => x.Model).ToList();
+            foreach (var item in res)
+                Console.WriteLine(item.GetTypeCode());
         }
     }
 }
