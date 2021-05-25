@@ -1,0 +1,25 @@
+﻿<?xml version="1.0"?>
+<ArrayOfSpeciality xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Speciality>
+    <Courses>
+      <Course>
+        <Name>Matanalysis</Name>
+      </Course>
+      <Course>
+        <Name>TheoryOfInformation</Name>
+      </Course>
+    </Courses>
+    <Name>ComputerSecurity</Name>
+  </Speciality>
+  <Speciality>
+    <Courses>
+      <Course>
+        <Name>Matanalysis</Name>
+      </Course>
+      <Course>
+        <Name>Physics</Name>
+      </Course>
+    </Courses>
+    <Name>PhysicalElectronics</Name>
+  </Speciality>
+</ArrayOfSpeciality>

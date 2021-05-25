@@ -1,0 +1,15 @@
+﻿<?xml version="1.0"?>
+<ArrayOfCourse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Course>
+    <Name>Matanalysis</Name>
+  </Course>
+  <Course>
+    <Name>TheoryOfInformation</Name>
+  </Course>
+  <Course>
+    <Name>ComputerNetworks</Name>
+  </Course>
+  <Course>
+    <Name>StatRF</Name>
+  </Course>
+</ArrayOfCourse>

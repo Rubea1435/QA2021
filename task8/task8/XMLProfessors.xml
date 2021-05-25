@@ -1,0 +1,27 @@
+﻿<?xml version="1.0"?>
+<ArrayOfProfessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Professor>
+    <FirstName>Mr. Kislyh</FirstName>
+    <LastName>Schey</LastName>
+    <Courses>
+      <Course>
+        <Name>Matanalysis</Name>
+      </Course>
+      <Course>
+        <Name>TheoryOfInformation</Name>
+      </Course>
+    </Courses>
+  </Professor>
+  <Professor>
+    <FirstName>Mr. Lopuh</FirstName>
+    <LastName>Apparatura</LastName>
+    <Courses>
+      <Course>
+        <Name>Matanalysis</Name>
+      </Course>
+      <Course>
+        <Name>TheoryOfInformation</Name>
+      </Course>
+    </Courses>
+  </Professor>
+</ArrayOfProfessor>

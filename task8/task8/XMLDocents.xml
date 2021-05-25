@@ -1,0 +1,15 @@
+﻿<?xml version="1.0"?>
+<ArrayOfDocent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Docent>
+    <FirstName>Dzhentljmen</FirstName>
+    <LastName>Udachi</LastName>
+    <Courses>
+      <Course>
+        <Name>Matanalysis</Name>
+      </Course>
+      <Course>
+        <Name>TheoryOfInformation</Name>
+      </Course>
+    </Courses>
+  </Docent>
+</ArrayOfDocent>
