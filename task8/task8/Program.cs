@@ -52,7 +52,6 @@ namespace task8
             foreach (Student stud in studsKB)
                 Console.WriteLine(stud.FirstName);
 
-
             /*Course course1 = new Course(CourseName.Matanalysis);
             Course course2 = new Course(CourseName.TheoryOfInformation);
             Course course3 = new Course(CourseName.Physics);
