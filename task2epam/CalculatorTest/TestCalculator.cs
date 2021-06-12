@@ -36,7 +36,7 @@ namespace CalculatorTest
 
         [Ignore]
         [TestMethod]
-        public void OneCanDevideByZero() => Assert.AreEqual(Calc.Devide(1, 0), 0);
+        public void OneCanDivideByZero() => Assert.AreEqual(Calc.Divide(1, 0), 0);
 
         /*[TestMethod]
         public void OneCanReadAppConfig()
