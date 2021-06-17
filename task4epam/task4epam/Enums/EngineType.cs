@@ -2,8 +2,8 @@
 {
     enum EngineType
     {
-        petrol,
-        diesel,
-        gas
+        Petrol,
+        Diesel,
+        Gas
     }
 }

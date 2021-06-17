@@ -4,9 +4,9 @@
     {
         public Scooter Create()
         {
-            Engine engine = new Engine(5, 0.05, EngineType.petrol, 1);
+            Engine engine = new Engine(5, 0.05, EngineType.Petrol, 1);
             Chassis chassis = new Chassis(2, 2, 200);
-            Transmission transmission = new Transmission(TransmissionType.variator, 1, "Honda");
+            Transmission transmission = new Transmission(TransmissionType.Variator, 1, "Honda");
             return new Scooter(engine, chassis, transmission, 400);
         }
     }

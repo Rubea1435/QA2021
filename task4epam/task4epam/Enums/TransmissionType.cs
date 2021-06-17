@@ -2,9 +2,9 @@
 {
     enum TransmissionType
     {
-        manual,
-        automatic,
-        variator,
-        robot   
+        Manual,
+        Automatic,
+        Variator,
+        Robot   
     }
 }
