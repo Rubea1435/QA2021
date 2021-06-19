@@ -2,9 +2,12 @@
 
 namespace task4epam
 {
-    class Truck : Vehicle
+    public class Truck : Vehicle
     {
-        public int MaxTrailerWeight { get; } // kilograms
+        public int MaxTrailerWeight { get; set; } // kilograms
+
+        public Truck() { }
+
         public Truck(Engine engine, Chassis chassis, Transmission transmission, int maxTrailerWeight)
             : base(engine, chassis, transmission)
         {

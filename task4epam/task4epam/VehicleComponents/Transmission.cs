@@ -2,11 +2,13 @@
 
 namespace task4epam
 {
-    class Transmission
+    public class Transmission
     {
-        public TransmissionType Type { get; }
-        public int GearNumber { get; }
-        public string Producer { get; }
+        public TransmissionType Type { get; set; }
+        public int GearNumber { get; set; }
+        public string Producer { get; set; }
+
+        public Transmission() { }
 
         public Transmission(TransmissionType type, int gearNumber, string producer)
         {

@@ -2,12 +2,14 @@
 
 namespace task4epam
 {
-    class Engine
+    public class Engine
     {
-        public int Power { get; } // horsepower
-        public double Size { get; } // litres
-        public EngineType Type { get; }
-        public int SerialNumber { get; }
+        public int Power { get; set; } // horsepower
+        public double Size { get; set; } // litres
+        public EngineType Type { get; set; }
+        public int SerialNumber { get; set; }
+
+        public Engine() { }
 
         public Engine(int power, double size, EngineType type, int serialNumber)
         {

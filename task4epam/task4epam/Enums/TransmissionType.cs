@@ -1,6 +1,6 @@
 ﻿namespace task4epam
 {
-    enum TransmissionType
+    public enum TransmissionType
     {
         Manual,
         Automatic,

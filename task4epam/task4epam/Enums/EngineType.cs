@@ -1,6 +1,6 @@
 ﻿namespace task4epam
 {
-    enum EngineType
+    public enum EngineType
     {
         Petrol,
         Diesel,

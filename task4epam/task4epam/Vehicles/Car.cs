@@ -2,9 +2,12 @@
 
 namespace task4epam
 {
-    class Car : Vehicle
+    public class Car : Vehicle
     {
-        public int MaxSpeed { get; } // km/h
+        public int MaxSpeed { get; set; } // km/h
+
+        public Car() { }
+
         public Car(Engine engine, Chassis chassis, Transmission transmission, int maxSpeed)
             : base(engine, chassis, transmission)
         {

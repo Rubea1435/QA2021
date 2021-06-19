@@ -2,9 +2,12 @@
 
 namespace task4epam
 {
-    class Bus : Vehicle
+    public class Bus : Vehicle
     {
-        public int PassengerSeats { get; }
+        public int PassengerSeats { get; set; }
+
+        public Bus() { }
+
         public Bus(Engine engine, Chassis chassis, Transmission transmission, int passengerSeats)
             : base(engine, chassis, transmission)
         {           

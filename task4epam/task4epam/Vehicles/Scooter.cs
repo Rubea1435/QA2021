@@ -2,9 +2,12 @@
 
 namespace task4epam
 {
-    class Scooter : Vehicle
+    public class Scooter : Vehicle
     {
-        public int CruisingRange { get; } // kilometers
+        public int CruisingRange { get; set; } // kilometers
+
+        public Scooter() { }
+
         public Scooter(Engine engine, Chassis chassis, Transmission transmission, int cruisingRange)
             : base(engine, chassis, transmission)
         {

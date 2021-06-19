@@ -2,11 +2,13 @@
 
 namespace task4epam
 {
-    class Chassis
+    public class Chassis
     {
-        public int WheelsNumber { get; } 
-        public int SerialNumber { get; }
-        public int AllowedLoad { get; } // kilograms
+        public int WheelsNumber { get; set; } 
+        public int SerialNumber { get; set; }
+        public int AllowedLoad { get; set; } // kilograms
+
+        public Chassis() { }
 
         public Chassis(int wheelsNumber, int serialNumber, int allowedLoad)
         {
