@@ -2,6 +2,10 @@
 {
     class TruckBuilder
     {
+        /// <summary>
+        /// This builder is needed just to avoid passing plenty of parameters to Truck constructor
+        /// </summary>
+        /// <returns></returns>
         public Truck Create()
         {
             Engine engine = new Engine(560, 10.5, EngineType.Diesel, 33);

@@ -2,6 +2,10 @@
 {
     class CarBuilder
     {
+        /// <summary>
+        /// This builder is needed just to avoid passing plenty of parameters to Car constructor
+        /// </summary>
+        /// <returns></returns>
         public Car Create()
         {
             Engine engine = new Engine(120, 1.3, EngineType.Petrol, 100500);

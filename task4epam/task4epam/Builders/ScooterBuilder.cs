@@ -2,6 +2,10 @@
 {
     class ScooterBuilder
     {
+        /// <summary>
+        /// This builder is needed just to avoid passing plenty of parameters to Scooter constructor
+        /// </summary>
+        /// <returns></returns>
         public Scooter Create()
         {
             Engine engine = new Engine(5, 0.05, EngineType.Petrol, 1);

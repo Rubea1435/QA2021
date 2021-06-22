@@ -2,6 +2,10 @@
 {
     class BusBuilder
     {
+        /// <summary>
+        /// This builder is needed just to avoid passing plenty of parameters to Bus constructor 
+        /// </summary>
+        /// <returns></returns>
         public Bus Create()
         {
             Engine engine = new Engine(480, 8.9, EngineType.Diesel, 1435);

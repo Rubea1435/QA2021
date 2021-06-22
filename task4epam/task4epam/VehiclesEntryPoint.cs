@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace task4epam
 {
-    class Program
+    class VehiclesEntryPoint
     {
         static void Main(string[] args)
         {

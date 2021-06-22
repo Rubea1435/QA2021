@@ -5,11 +5,6 @@ VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task4epam", "task4epam\task4epam.csproj", "{69FCC98F-6257-48ED-A034-A0417384A59E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehiclesTest", "VehiclesTest\VehiclesTest.csproj", "{DF35E6C6-D525-4C0F-A3B9-9E8DF7540B8A}"
-	ProjectSection(ProjectDependencies) = postProject
-		{69FCC98F-6257-48ED-A034-A0417384A59E} = {69FCC98F-6257-48ED-A034-A0417384A59E}
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,10 +15,6 @@ Global
 		{69FCC98F-6257-48ED-A034-A0417384A59E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69FCC98F-6257-48ED-A034-A0417384A59E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{69FCC98F-6257-48ED-A034-A0417384A59E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DF35E6C6-D525-4C0F-A3B9-9E8DF7540B8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DF35E6C6-D525-4C0F-A3B9-9E8DF7540B8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DF35E6C6-D525-4C0F-A3B9-9E8DF7540B8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DF35E6C6-D525-4C0F-A3B9-9E8DF7540B8A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

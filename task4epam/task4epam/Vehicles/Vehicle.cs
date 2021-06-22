@@ -3,6 +3,9 @@ using System.Xml.Serialization;
 
 namespace task4epam
 {
+    /// <summary>
+    /// base class for vehicle types
+    /// </summary>
     [Serializable]
     [XmlInclude(typeof(Bus)), XmlInclude(typeof(Car)), XmlInclude(typeof(Scooter)), XmlInclude(typeof(Truck))]
     public abstract class Vehicle
@@ -20,6 +23,10 @@ namespace task4epam
             Transmission = transmission;
         }
 
+        /// <summary>
+        /// It creates a string that contains all class fields information
+        /// </summary>
+        /// <returns>String with full information</returns>
         public abstract string GetFullInfo();
     }
 }
