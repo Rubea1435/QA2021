@@ -2,7 +2,7 @@
 
 namespace task1epam
 {
-    public class Program
+    public class MaxSymbolsInRowEntryPoint
     {
         static void Main(string[] args)
         {
