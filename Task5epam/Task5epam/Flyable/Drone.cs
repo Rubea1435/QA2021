@@ -15,6 +15,10 @@ namespace Task5epam
             CurrentPosition = currentPosition;
         }
 
+        /// <summary>
+        /// Changes current position to new
+        /// </summary>
+        /// <param name="coord"></param>
         public void FlyTo(Coordinate coord)
         {
             double distance = CurrentPosition.GetDistance(coord);
@@ -40,8 +44,8 @@ namespace Task5epam
         /// <summary>
         /// Drone hovers in the air every 10 minutes of flight for 1 minute
         /// </summary>
-        /// <param name="coord"></param>
-        /// <returns></returns>
+        /// <param name="coord">Another point</param>
+        /// <returns>Fly time to get to another point</returns>
         public double GetFlyTime(Coordinate coord)
         {
             int speed = GetSpeed(); // km/h

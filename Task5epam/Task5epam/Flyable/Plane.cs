@@ -15,6 +15,10 @@ namespace Task5epam
             CurrentPosition = currentPosition;
         }
 
+        /// <summary>
+        /// Changes current position to new
+        /// </summary>
+        /// <param name="coord"></param>
         public void FlyTo(Coordinate coord)
         {
             CurrentPosition = coord;
@@ -23,8 +27,8 @@ namespace Task5epam
         /// <summary>
         /// Plane increases speed by 10 km/h every 10 km of flight from the start speed of 200 km/h.
         /// </summary>
-        /// <param name="coord"></param>
-        /// <returns></returns>
+        /// <param name="coord">Another point</param>
+        /// <returns>Fly time to get to another point</returns>
         public double GetFlyTime(Coordinate coord)
         {
             int startSpeed = 200; // km/h

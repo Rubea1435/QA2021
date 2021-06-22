@@ -12,6 +12,12 @@ namespace Task5epam
         public double Y;
         public double Z;
 
+        /// <summary>
+        /// In task it's required that coordinates are positive
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <param name="z"></param>
         public Coordinate(double x, double y, double z)
         {
             if (x >= 0 && y >= 0 && z >= 0)
@@ -23,6 +29,11 @@ namespace Task5epam
             else throw new ArgumentOutOfRangeException("Coordinates can't be negative.");
         }
 
+        /// <summary>
+        /// Calculates the distance between two points
+        /// </summary>
+        /// <param name="coord">Another 3D coordinate</param>
+        /// <returns>Distance</returns>
         public double GetDistance(Coordinate coord)
         {
             double shiftingX = X - coord.X;

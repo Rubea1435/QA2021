@@ -16,7 +16,7 @@ namespace Task5epam
         }
 
         /// <summary>
-        /// Change current position to new
+        /// Changes current position to new
         /// </summary>
         /// <param name="coord"></param>
         public void FlyTo(Coordinate coord)
@@ -38,8 +38,8 @@ namespace Task5epam
         /// <summary>
         /// Time to get to new coordinate by bird.
         /// </summary>
-        /// <param name="coord"></param>
-        /// <returns></returns>
+        /// <param name="coord">Another point</param>
+        /// <returns>Fly time to get to another point</returns>
         public double GetFlyTime(Coordinate coord)
         {
             double time = CurrentPosition.GetDistance(coord) / GetSpeed(); // hours
