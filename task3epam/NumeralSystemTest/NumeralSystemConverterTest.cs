@@ -15,6 +15,13 @@ namespace NumeralSystemTest
         }
 
         [TestMethod]
+        public void ToNumeralSystemWithLetters()
+        {
+            int number = 27;
+            Assert.AreEqual("1D", number.ToNumeralSystem(14));
+        }
+
+        [TestMethod]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void ToOutOfRangeSystem()
         {

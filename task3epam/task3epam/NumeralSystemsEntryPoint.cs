@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace task3epam
 {
-    class Program
+    class NumeralSystemsEntryPoint
     {
         static void Main(string[] args)
         {
