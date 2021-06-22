@@ -34,5 +34,12 @@ namespace StringTest
             string str = "121212";
             Assert.AreEqual(6, str.MaxNotSameSymbolsInRow());
         }
+
+        [TestMethod]
+        public void StringWithDifferentSymbolsStartingInsideTheStringTest()
+        {
+            string str = "qwee1234";
+            Assert.AreEqual(5, str.MaxNotSameSymbolsInRow());
+        }
     }
 }
