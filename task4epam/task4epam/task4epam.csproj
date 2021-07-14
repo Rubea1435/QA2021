@@ -43,12 +43,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exceptions\AddException.cs" />
+    <Compile Include="Exceptions\GetAutoByParameterException.cs" />
+    <Compile Include="Exceptions\RemoveAutoException.cs" />
+    <Compile Include="Exceptions\UpdateAutoException.cs" />
+    <Compile Include="Vehicles\Autopark.cs" />
     <Compile Include="Builders\BusBuilder.cs" />
     <Compile Include="Builders\CarBuilder.cs" />
     <Compile Include="Builders\ScooterBuilder.cs" />
     <Compile Include="Builders\TruckBuilder.cs" />
     <Compile Include="Helpers\EngineWithoutSize.cs" />
     <Compile Include="Helpers\Serializer.cs" />
+    <Compile Include="Exceptions\InitializationException.cs" />
     <Compile Include="Vehicles\Bus.cs" />
     <Compile Include="Vehicles\Car.cs" />
     <Compile Include="Enums\EngineType.cs" />

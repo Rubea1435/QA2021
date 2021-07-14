@@ -13,17 +13,12 @@ namespace task4epam
         {           
             if (passengerSeats > 0)
                 PassengerSeats = passengerSeats;
-            else throw new ArgumentOutOfRangeException("Passenger seats number should be positive.");
+            else throw new InitializationException("Passenger seats number should be positive.");
         }
 
         public override string GetFullInfo()
         {
-            return "Bus: engine power = " + Engine.Power + ", engine size = " + Engine.Size +
-                ", engine type = " + Engine.Type + ", engine serial number = " + Engine.SerialNumber +
-                ", wheels number = " + Chassis.WheelsNumber + ", chassis serial number = " + Chassis.SerialNumber +
-                ", allowed load = " + Chassis.AllowedLoad + ", transmission type = " + Transmission.Type +
-                ", gear number = " + Transmission.GearNumber + ", transmission producer = " + Transmission.Producer +
-                ", passenger seats number = " + PassengerSeats;
+            return "Bus: " + base.GetFullInfo() + ", passenger seats number = " + PassengerSeats;
         }
     }
 }

@@ -31,7 +31,7 @@ namespace task4epam
 
             Serializer.CreateXml("Vehicles with engine size more than 1.5 litre.xml", vehiclesWithBigEngineSize);
             Serializer.CreateXml("Engine types, numbers and powers for all buses and trucks.xml", engineTypesAndNumbersAndPowersForBusesAndTrucks);
-            Serializer.CreateXml("Vehicles grouped by transmission type.xml", vehiclesGroupedByTransmissionType);        
+            Serializer.CreateXml("Vehicles grouped by transmission type.xml", vehiclesGroupedByTransmissionType);
         }
     }
 }

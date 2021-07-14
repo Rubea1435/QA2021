@@ -1,6 +1,6 @@
 ﻿namespace task4epam
 {
-    class ScooterBuilder
+    public class ScooterBuilder
     {
         /// <summary>
         /// This builder is needed just to avoid passing plenty of parameters to Scooter constructor

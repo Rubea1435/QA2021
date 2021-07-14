@@ -14,9 +14,9 @@ namespace task4epam
         public Chassis Chassis { get; set; }
         public Transmission Transmission { get; set; }
 
-        public Vehicle() { }
+        protected Vehicle() { }
 
-        public Vehicle(Engine engine, Chassis chassis, Transmission transmission)
+        protected Vehicle(Engine engine, Chassis chassis, Transmission transmission)
         {
             Engine = engine;
             Chassis = chassis;
@@ -27,6 +27,13 @@ namespace task4epam
         /// It creates a string that contains all class fields information
         /// </summary>
         /// <returns>String with full information</returns>
-        public abstract string GetFullInfo();
+        public virtual string GetFullInfo()
+        {
+            return "engine power = " + Engine.Power + ", engine size = " + Engine.Size +
+                ", engine type = " + Engine.Type + ", engine serial number = " + Engine.SerialNumber +
+                ", wheels number = " + Chassis.WheelsNumber + ", chassis serial number = " + Chassis.SerialNumber +
+                ", allowed load = " + Chassis.AllowedLoad + ", transmission type = " + Transmission.Type +
+                ", gear number = " + Transmission.GearNumber + ", transmission producer = " + Transmission.Producer;
+        }
     }
 }

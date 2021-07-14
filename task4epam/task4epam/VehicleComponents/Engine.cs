@@ -26,13 +26,13 @@ namespace task4epam
             Type = type;
             if (power > 0)
                 Power = power;
-            else throw new ArgumentOutOfRangeException("Engine power should be positive.");
+            else throw new InitializationException("Engine power should be positive.");
             if (size > 0)
                 Size = size;
-            else throw new ArgumentOutOfRangeException("Engine size should be positive.");
+            else throw new InitializationException("Engine size should be positive.");
             if (serialNumber > 0)
                 SerialNumber = serialNumber;
-            else throw new ArgumentOutOfRangeException("Serial number should be positive.");
+            else throw new InitializationException("Serial number should be positive.");
         }
     }
 }

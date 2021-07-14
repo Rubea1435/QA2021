@@ -1,6 +1,6 @@
 ﻿namespace task4epam
 {
-    class TruckBuilder
+    public class TruckBuilder
     {
         /// <summary>
         /// This builder is needed just to avoid passing plenty of parameters to Truck constructor

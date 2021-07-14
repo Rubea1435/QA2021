@@ -25,7 +25,7 @@ namespace task4epam
             Producer = producer;
             if (gearNumber > 0)
                 GearNumber = gearNumber;
-            else throw new ArgumentOutOfRangeException("Gear number should be positive.");
+            else throw new InitializationException("Gear number should be positive.");
         }
     }
 }

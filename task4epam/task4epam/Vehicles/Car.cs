@@ -13,17 +13,12 @@ namespace task4epam
         {
             if (maxSpeed > 0)
                 MaxSpeed = maxSpeed;
-            else throw new ArgumentOutOfRangeException("Max speed should be positive.");
+            else throw new InitializationException("Max speed should be positive.");
         }
 
         public override string GetFullInfo()
         {
-            return "Car: engine power = " + Engine.Power + ", engine size = " + Engine.Size +
-                ", engine type = " + Engine.Type + ", engine serial number = " + Engine.SerialNumber +
-                ", wheels number = " + Chassis.WheelsNumber + ", chassis serial number = " + Chassis.SerialNumber +
-                ", allowed load = " + Chassis.AllowedLoad + ", transmission type = " + Transmission.Type +
-                ", gear number = " + Transmission.GearNumber + ", transmission producer = " + Transmission.Producer +
-                ", max speed = " + MaxSpeed;
-        } 
+            return "Car: " + base.GetFullInfo() + ", max speed = " + MaxSpeed;
+        }
     }
 }

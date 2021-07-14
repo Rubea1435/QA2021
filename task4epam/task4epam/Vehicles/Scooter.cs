@@ -13,17 +13,12 @@ namespace task4epam
         {
             if (cruisingRange > 0)
                 CruisingRange = cruisingRange;
-            else throw new ArgumentOutOfRangeException("Cruising range should be positive.");
+            else throw new InitializationException("Cruising range should be positive.");
         }
 
         public override string GetFullInfo()
         {
-            return "Car: engine power = " + Engine.Power + ", engine size = " + Engine.Size +
-                ", engine type = " + Engine.Type + ", engine serial number = " + Engine.SerialNumber +
-                ", wheels number = " + Chassis.WheelsNumber + ", chassis serial number = " + Chassis.SerialNumber +
-                ", allowed load = " + Chassis.AllowedLoad + ", transmission type = " + Transmission.Type +
-                ", gear number = " + Transmission.GearNumber + ", transmission producer = " + Transmission.Producer +
-                ", cruising range = " + CruisingRange;
+            return "Scooter: " + base.GetFullInfo() + ", cruising range = " + CruisingRange;
         }
     }
 }

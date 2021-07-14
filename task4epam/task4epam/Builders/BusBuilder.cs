@@ -1,6 +1,6 @@
 ﻿namespace task4epam
 {
-    class BusBuilder
+    public class BusBuilder
     {
         /// <summary>
         /// This builder is needed just to avoid passing plenty of parameters to Bus constructor 
