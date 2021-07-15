@@ -6,9 +6,16 @@ namespace task1epam
     {
         static void Main(string[] args)
         {
-            string args1 = ""; // test string to check without cmd.exe
-            int maxCount = args[0].MaxNotSameSymbolsInRow();
-            Console.WriteLine(maxCount);
+            int maxCount = 0;
+            try
+            {
+                maxCount = args[0].CalculateMaxNotSameSymbolsInRow();
+                Console.WriteLine(maxCount);
+            }
+            catch(IndexOutOfRangeException)
+            {
+                Console.WriteLine("String is empty.");
+            }
         }
     }
 }

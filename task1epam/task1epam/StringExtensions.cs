@@ -1,13 +1,13 @@
 ﻿namespace task1epam
 {
-    public static class Helper
+    public static class StringExtensions
     {
         /// <summary>
         /// Calculates maximum number of not the same symbols in string in a row
         /// </summary>
         /// <param name="str"></param>
         /// <returns></returns>
-        public static int MaxNotSameSymbolsInRow(this string str)
+        public static int CalculateMaxNotSameSymbolsInRow(this string str)
         {
             int maxCount = 1; // maximum at all
             int count = 1; // maximum letters in a row on the current iteration 
