@@ -51,20 +51,20 @@ namespace Task5epam
             int speed = GetSpeed(); // km/h
             double freezePeriod = 1 / 6.0; // hours
             double freezeDuration = 1 / 60.0; // hours 
-            double distance = CurrentPosition.GetDistance(newCoordinate); // full trip distance, kilometers
+            double fullTripDistance = CurrentPosition.GetDistance(newCoordinate); // kilometers
             double distanceInFreezePeriod = speed * freezePeriod; // distance that drone covers during every period before freeze
 
             double time;
-            int freezesNumber = (int)Math.Floor(distance / distanceInFreezePeriod); // how many times freezes during the trip
+            int freezesNumber = (int)Math.Floor(fullTripDistance / distanceInFreezePeriod); // how many times drone freezes during the trip
             if (freezesNumber > 0)
             {
                 double partialDistance = distanceInFreezePeriod * freezesNumber; // distance covered in full periods (fly + freeze)
                 double avgSpeed = speed * freezePeriod / (freezePeriod + freezeDuration); // while flying with freezing
                 time = partialDistance / avgSpeed;
-                double lastSegmentLength = distance % partialDistance; // distance to cover without freezes
+                double lastSegmentLength = fullTripDistance % partialDistance; // distance to cover without freezes
                 time += lastSegmentLength / speed;
             }
-            else time = distance / speed;
+            else time = fullTripDistance / speed;
             return time;
         }
     }

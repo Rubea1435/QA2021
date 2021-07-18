@@ -8,7 +8,7 @@ namespace Task5epam
 {
     public class Bird : IFlyable
     {
-        public Coordinate CurrentPosition { get; private set; } // positive kilometers  
+        public Coordinate CurrentPosition { get; private set; }
 
         public Bird(Coordinate currentPosition)
         {

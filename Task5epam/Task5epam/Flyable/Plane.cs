@@ -35,18 +35,18 @@ namespace Task5epam
             int speedIncrease = 10; // km/h
             int speedIncrementDistance = 10; // kilometers  
             double distance = CurrentPosition.GetDistance(newCoordinate); // kilometers
-            int increasesNumber = (int)Math.Floor(distance / speedIncrementDistance); // how many times speed increases
+            int speedIncreasesNumber = (int)Math.Floor(distance / speedIncrementDistance);
 
             double time = 0;
             double currentSpeed = startSpeed;
-            if (increasesNumber > 0)
+            if (speedIncreasesNumber > 0)
             {
-                for (int i = 1; i <= increasesNumber; i++)
+                for (int i = 1; i <= speedIncreasesNumber; i++)
                 {
                     time += speedIncrementDistance / currentSpeed;
                     currentSpeed += speedIncrease;
                 }
-                double lastSegmentLength = distance % speedIncrementDistance; // kilometers
+                double lastSegmentLength = distance % speedIncrementDistance; 
                 time += lastSegmentLength / currentSpeed;
             }
             else time = distance / startSpeed;

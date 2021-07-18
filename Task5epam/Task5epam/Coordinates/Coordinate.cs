@@ -62,12 +62,6 @@ namespace Task5epam
             }
         }
 
-        /// <summary>
-        /// In task it's required that coordinates are positive
-        /// </summary>
-        /// <param name="x"></param>
-        /// <param name="y"></param>
-        /// <param name="z"></param>
         public Coordinate(double x, double y, double z)
         {
             X = x;
@@ -75,11 +69,6 @@ namespace Task5epam
             Z = z;
         }
 
-        /// <summary>
-        /// Calculates the distance between two points
-        /// </summary>
-        /// <param name="coord">Another 3D coordinate</param>
-        /// <returns>Distance</returns>
         public double GetDistance(Coordinate anotherCoordinate)
         {
             double shiftingX = X - anotherCoordinate.X;
