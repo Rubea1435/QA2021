@@ -22,16 +22,16 @@ namespace Task5epam
         public void FlyTo(Coordinate newCoordinate)
         {
             double distance = CurrentPosition.GetDistance(newCoordinate);
-            if (distance < LimitDistance())
+            if (distance < GetLimitDistance())
                 CurrentPosition = newCoordinate;
-            else throw new ArgumentException($"Distance can't be more than {LimitDistance()} kilometers");
+            else throw new ArgumentException($"Distance can't be more than {GetLimitDistance()} kilometers");
         }
 
         /// <summary>
         /// Maximum distance that a drone can overcome
         /// </summary>
         /// <returns></returns>
-        private int LimitDistance()
+        private int GetLimitDistance()
         {
             return 1000;
         }
