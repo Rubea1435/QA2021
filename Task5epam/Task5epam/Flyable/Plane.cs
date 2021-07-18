@@ -18,23 +18,23 @@ namespace Task5epam
         /// <summary>
         /// Changes current position to new
         /// </summary>
-        /// <param name="coord"></param>
-        public void FlyTo(Coordinate coord)
+        /// <param name="newCoordinate"></param>
+        public void FlyTo(Coordinate newCoordinate)
         {
-            CurrentPosition = coord;
+            CurrentPosition = newCoordinate;
         }
 
         /// <summary>
         /// Plane increases speed by 10 km/h every 10 km of flight from the start speed of 200 km/h.
         /// </summary>
-        /// <param name="coord">Another point</param>
+        /// <param name="newCoordinate">Another point</param>
         /// <returns>Fly time to get to another point</returns>
-        public double GetFlyTime(Coordinate coord)
+        public double GetFlyTime(Coordinate newCoordinate)
         {
             int startSpeed = 200; // km/h
             int speedIncrease = 10; // km/h
             int speedIncrementDistance = 10; // kilometers  
-            double distance = CurrentPosition.GetDistance(coord); // kilometers
+            double distance = CurrentPosition.GetDistance(newCoordinate); // kilometers
             int increasesNumber = (int)Math.Floor(distance / speedIncrementDistance); // how many times speed increases
 
             double time = 0;

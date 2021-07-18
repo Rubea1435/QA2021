@@ -8,7 +8,7 @@ namespace Task5epam
 {
     interface IFlyable
     {
-        void FlyTo(Coordinate coord);
-        double GetFlyTime(Coordinate coord);
+        void FlyTo(Coordinate newCoordinate);
+        double GetFlyTime(Coordinate newCoordinate);
     }
 }

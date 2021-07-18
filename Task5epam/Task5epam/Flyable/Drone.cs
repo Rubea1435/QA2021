@@ -18,12 +18,12 @@ namespace Task5epam
         /// <summary>
         /// Changes current position to new
         /// </summary>
-        /// <param name="coord"></param>
-        public void FlyTo(Coordinate coord)
+        /// <param name="newCoordinate"></param>
+        public void FlyTo(Coordinate newCoordinate)
         {
-            double distance = CurrentPosition.GetDistance(coord);
+            double distance = CurrentPosition.GetDistance(newCoordinate);
             if (distance < LimitDistance())
-                CurrentPosition = coord;
+                CurrentPosition = newCoordinate;
             else throw new ArgumentException($"Distance can't be more than {LimitDistance()} kilometers");
         }
 
@@ -44,14 +44,14 @@ namespace Task5epam
         /// <summary>
         /// Drone hovers in the air every 10 minutes of flight for 1 minute
         /// </summary>
-        /// <param name="coord">Another point</param>
+        /// <param name="newCoordinate">Another point</param>
         /// <returns>Fly time to get to another point</returns>
-        public double GetFlyTime(Coordinate coord)
+        public double GetFlyTime(Coordinate newCoordinate)
         {
             int speed = GetSpeed(); // km/h
             double freezePeriod = 1 / 6.0; // hours
             double freezeDuration = 1 / 60.0; // hours 
-            double distance = CurrentPosition.GetDistance(coord); // full trip distance, kilometers
+            double distance = CurrentPosition.GetDistance(newCoordinate); // full trip distance, kilometers
             double distanceInFreezePeriod = speed * freezePeriod; // distance that drone covers during every period before freeze
 
             double time;

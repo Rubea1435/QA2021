@@ -80,11 +80,11 @@ namespace Task5epam
         /// </summary>
         /// <param name="coord">Another 3D coordinate</param>
         /// <returns>Distance</returns>
-        public double GetDistance(Coordinate coord)
+        public double GetDistance(Coordinate anotherCoordinate)
         {
-            double shiftingX = X - coord.X;
-            double shiftingY = Y - coord.Y;
-            double shiftingZ = Z - coord.Z;
+            double shiftingX = X - anotherCoordinate.X;
+            double shiftingY = Y - anotherCoordinate.Y;
+            double shiftingZ = Z - anotherCoordinate.Z;
             double distance = Math.Sqrt(shiftingX * shiftingX + shiftingY * shiftingY + shiftingZ * shiftingZ);
             return distance;
         }
