@@ -39,6 +39,7 @@ namespace Task5epam
 
             double time = 0;
             double currentSpeed = startSpeed;
+
             if (speedIncreasesNumber > 0)
             {
                 for (int i = 1; i <= speedIncreasesNumber; i++)

@@ -14,8 +14,10 @@ namespace Task5epam
             Bird bird = new Bird(start);
             Plane plane = new Plane(start);
             Drone drone = new Drone(start);
+
             List<IFlyable> aeroItems = new List<IFlyable> { bird, plane, drone };
             StringBuilder[] resultOutput = new StringBuilder[aeroItems.Count];
+
             for (int i = 0; i < aeroItems.Count; i++)
             {
                 resultOutput[i] = new StringBuilder();
@@ -34,6 +36,7 @@ namespace Task5epam
                 }
                 index++;
             }
+
             foreach (StringBuilder info in resultOutput)
             {
                 Console.WriteLine(info);

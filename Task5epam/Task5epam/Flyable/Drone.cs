@@ -22,6 +22,7 @@ namespace Task5epam
         public void FlyTo(Coordinate newCoordinate)
         {
             double distance = CurrentPosition.GetDistance(newCoordinate);
+
             if (distance < GetLimitDistance())
                 CurrentPosition = newCoordinate;
             else throw new ArgumentException($"Distance can't be more than {GetLimitDistance()} kilometers");
@@ -56,6 +57,7 @@ namespace Task5epam
 
             double time;
             int freezesNumber = (int)Math.Floor(fullTripDistance / distanceInFreezePeriod); // how many times drone freezes during the trip
+
             if (freezesNumber > 0)
             {
                 double partialDistance = distanceInFreezePeriod * freezesNumber; // distance covered in full periods (fly + freeze)
@@ -65,6 +67,7 @@ namespace Task5epam
                 time += lastSegmentLength / speed;
             }
             else time = fullTripDistance / speed;
+
             return time;
         }
     }
