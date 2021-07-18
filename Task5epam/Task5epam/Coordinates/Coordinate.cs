@@ -6,11 +6,61 @@ using System.Threading.Tasks;
 
 namespace Task5epam
 {
-    public struct Coordinate
+    public class Coordinate
     {
-        public double X;
-        public double Y;
-        public double Z;
+        private double _x;
+        public double X 
+        {
+            get
+            {
+                return _x;
+            }
+
+            set
+            {
+                if (value >= 0)
+                {
+                    _x = value;
+                }
+                else throw new ArgumentOutOfRangeException("Coordinates can't be negative.");
+            }
+        }
+
+        private double _y;
+        public double Y
+        {
+            get
+            {
+                return _y;
+            }
+
+            set
+            {
+                if (value >= 0)
+                {
+                    _y = value;
+                }
+                else throw new ArgumentOutOfRangeException("Coordinates can't be negative.");
+            }
+        }
+
+        private double _z;
+        public double Z
+        {
+            get
+            {
+                return _z;
+            }
+
+            set
+            {
+                if (value >= 0)
+                {
+                    _z = value;
+                }
+                else throw new ArgumentOutOfRangeException("Coordinates can't be negative.");
+            }
+        }
 
         /// <summary>
         /// In task it's required that coordinates are positive
@@ -20,13 +70,9 @@ namespace Task5epam
         /// <param name="z"></param>
         public Coordinate(double x, double y, double z)
         {
-            if (x >= 0 && y >= 0 && z >= 0)
-            {
-                X = x;
-                Y = y;
-                Z = z;
-            }
-            else throw new ArgumentOutOfRangeException("Coordinates can't be negative.");
+            X = x;
+            Y = y;
+            Z = z;
         }
 
         /// <summary>
