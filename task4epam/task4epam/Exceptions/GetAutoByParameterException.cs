@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace task4epam
 {
-    class GetAutoByParameterException : Exception
+    public class GetAutoByParameterException : Exception
     {
+        public GetAutoByParameterException() { }
+        public GetAutoByParameterException(string message) : base(message) { }
     }
 }

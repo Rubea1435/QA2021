@@ -4,16 +4,26 @@ namespace task4epam
 {
     public class Scooter : Vehicle
     {
-        public int CruisingRange { get; set; } // kilometers
+        private int _cruisingRange;
+        public int CruisingRange // kilometers
+        {
+            get
+            {
+                return _cruisingRange;
+            }
+            set
+            {
+                if (value > 0)
+                    _cruisingRange = value;
+                else throw new InitializationException("Cruising range should be positive.");
+            }
+        }
 
         public Scooter() { }
-
         public Scooter(Engine engine, Chassis chassis, Transmission transmission, int cruisingRange)
             : base(engine, chassis, transmission)
         {
-            if (cruisingRange > 0)
-                CruisingRange = cruisingRange;
-            else throw new InitializationException("Cruising range should be positive.");
+            CruisingRange = cruisingRange;
         }
 
         public override string GetFullInfo()

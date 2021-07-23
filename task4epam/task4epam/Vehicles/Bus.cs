@@ -4,16 +4,26 @@ namespace task4epam
 {
     public class Bus : Vehicle
     {
-        public int PassengerSeats { get; set; }
+        private int _passengerSeats;
+        public int PassengerSeats
+        {
+            get
+            {
+                return _passengerSeats;
+            }
+            set
+            {
+                if (value > 0)
+                    _passengerSeats = value;
+                else throw new InitializationException("Passenger seats number should be positive.");
+            }
+        }
 
         public Bus() { }
-
         public Bus(Engine engine, Chassis chassis, Transmission transmission, int passengerSeats)
             : base(engine, chassis, transmission)
         {           
-            if (passengerSeats > 0)
-                PassengerSeats = passengerSeats;
-            else throw new InitializationException("Passenger seats number should be positive.");
+            PassengerSeats = passengerSeats;
         }
 
         public override string GetFullInfo()

@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace task4epam
 {
-    class AddException : Exception
+    public class AddException : Exception
     {
+        public AddException() { }
+        public AddException(string message) : base(message) { }
     }
 }

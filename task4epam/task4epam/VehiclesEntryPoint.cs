@@ -18,6 +18,11 @@ namespace task4epam
             Scooter honda = hondaScooterBuilder.Create();
             Truck peterbilt = peterbiltTruckBuilder.Create();
 
+            scania.ID = 1;
+            renault.ID = 2;
+            honda.ID = 3;
+            peterbilt.ID = 4;
+
             List<Vehicle> allVehicles = new List<Vehicle> { scania, renault, honda, peterbilt };
             foreach (Vehicle item in allVehicles)
                 Console.WriteLine(item.GetFullInfo());

@@ -4,16 +4,26 @@ namespace task4epam
 {
     public class Car : Vehicle
     {
-        public int MaxSpeed { get; set; } // km/h
+        private int _maxSpeed;
+        public int MaxSpeed // km/h
+        {
+            get
+            {
+                return _maxSpeed;
+            }
+            set
+            {
+                if (value > 0)
+                    _maxSpeed = value;
+                else throw new InitializationException("Max speed should be positive.");
+            }
+        }
 
         public Car() { }
-
         public Car(Engine engine, Chassis chassis, Transmission transmission, int maxSpeed)
             : base(engine, chassis, transmission)
         {
-            if (maxSpeed > 0)
-                MaxSpeed = maxSpeed;
-            else throw new InitializationException("Max speed should be positive.");
+            MaxSpeed = maxSpeed;
         }
 
         public override string GetFullInfo()

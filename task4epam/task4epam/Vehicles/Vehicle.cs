@@ -13,6 +13,7 @@ namespace task4epam
         public Engine Engine { get; set; }
         public Chassis Chassis { get; set; }
         public Transmission Transmission { get; set; }
+        public int ID { get; set; } = 0;
 
         protected Vehicle() { }
 
