@@ -7,28 +7,28 @@ using System.Threading.Tasks;
 
 namespace Task10Epam
 {
-    class CommandHandler
+    public static class CommandHandler
     {
         private static string[] currentCommandLog;
 
-        public static ICommand GetCommand(string command, CarDealer dealer)
+        public static ICommand GetCommand(string command)
         {
             currentCommandLog = Regex.Split(command, @"[\s]+");
 
             switch (currentCommandLog[0].ToLower())
             {
                 case "add":
-                    return GetAddCommand(currentCommandLog, dealer);
+                    return GetAddCommand(currentCommandLog);
                 case "count":
                     try
                     {
                         if (currentCommandLog[1].ToLower() == "types")
                         {
-                            return GetCountTypesCommand(dealer);
+                            return GetCountTypesCommand();
                         }
                         else if (currentCommandLog[1].ToLower() == "all")
                         {
-                            return GetCountAllCommand(dealer);
+                            return GetCountAllCommand();
                         }
                         else
                         {
@@ -42,7 +42,7 @@ namespace Task10Epam
                         return null;
                     }
                 case "average":
-                    if (dealer.GetParkSize() == 0)
+                    if (CarDealer.GetInstance().GetParkSize() == 0)
                     {
                         Console.WriteLine("No cars at the dealer.");
                         return null;
@@ -51,11 +51,11 @@ namespace Task10Epam
                     {
                         if (currentCommandLog[1].ToLower() == "price" && currentCommandLog.Length == 2)
                         {
-                            return GetAveragePriceCommand(dealer);
+                            return GetAveragePriceCommand();
                         }
                         else if (currentCommandLog[1].ToLower() == "price" && currentCommandLog.Length == 3)
                         {
-                            return GetAveragePriceTypeCommand(dealer, currentCommandLog[2]);
+                            return GetAveragePriceTypeCommand(currentCommandLog[2]);
                         }
                         else
                         {
@@ -76,12 +76,12 @@ namespace Task10Epam
             }
         }
 
-        private static ICommand GetAddCommand(string[] currentCommandLog, CarDealer dealer)
+        private static ICommand GetAddCommand(string[] currentCommandLog)
         {
             try
             {
                 Car car = new Car(currentCommandLog[1], currentCommandLog[2], Convert.ToInt32(currentCommandLog[4]));
-                return new AddCarCommand(dealer, car, Convert.ToInt32(currentCommandLog[3]));
+                return new AddCarCommand(car, Convert.ToInt32(currentCommandLog[3]));
             }
             catch(Exception)
             {
@@ -90,24 +90,24 @@ namespace Task10Epam
             }          
         }
 
-        private static ICommand GetCountTypesCommand(CarDealer dealer)
+        private static ICommand GetCountTypesCommand()
         {
-            return new CountTypesCommand(dealer);
+            return new CountTypesCommand();
         }
 
-        private static ICommand GetCountAllCommand(CarDealer dealer)
+        private static ICommand GetCountAllCommand()
         {
-            return new CountAllCommand(dealer);
+            return new CountAllCommand();
         }
 
-        private static ICommand GetAveragePriceCommand(CarDealer dealer)
+        private static ICommand GetAveragePriceCommand()
         {
-            return new AveragePriceCommand(dealer);
+            return new AveragePriceCommand();
         }
 
-        private static ICommand GetAveragePriceTypeCommand(CarDealer dealer, string carBrand)
+        private static ICommand GetAveragePriceTypeCommand(string carBrand)
         {
-            return new AveragePriceTypeCommand(dealer, carBrand);
+            return new AveragePriceTypeCommand(carBrand);
         }
     }
 }

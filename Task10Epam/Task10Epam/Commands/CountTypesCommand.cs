@@ -8,16 +8,13 @@ namespace Task10Epam
 {
     class CountTypesCommand : ICommand
     {
-        private CarDealer _dealer;
-
-        public CountTypesCommand(CarDealer dealer)
+        public CountTypesCommand()
         {
-            _dealer = dealer;
         }
 
         public void Execute()
         {
-            Console.WriteLine(_dealer.GetNumberOf(x => x.Brand));
+            Console.WriteLine(CarDealer.GetInstance().GetNumberOf(x => x.Brand));
         }
     }
 }

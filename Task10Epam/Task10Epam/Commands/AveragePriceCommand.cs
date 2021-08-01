@@ -8,16 +8,13 @@ namespace Task10Epam
 {
     class AveragePriceCommand : ICommand
     {
-        private CarDealer _dealer;
-
-        public AveragePriceCommand(CarDealer dealer)
+        public AveragePriceCommand()
         {
-            _dealer = dealer;
         }
 
         public void Execute()
         {
-            Console.WriteLine(_dealer.GetAverageBy(x => x.Price));
+            Console.WriteLine(CarDealer.GetInstance().GetAverageBy(x => x.Price));
         }
     }
 }

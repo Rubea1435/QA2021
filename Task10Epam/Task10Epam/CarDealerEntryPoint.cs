@@ -15,7 +15,7 @@ namespace Task10Epam
             while(true)
             {
                 string consoleCommand = Console.ReadLine();
-                ICommand nextCommand = CommandHandler.GetCommand(consoleCommand, dealer);
+                ICommand nextCommand = CommandHandler.GetCommand(consoleCommand);
                 dispatcher.Run(nextCommand);
             }
         }

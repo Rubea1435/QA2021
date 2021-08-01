@@ -8,13 +8,11 @@ namespace Task10Epam
 {
     class AddCarCommand : ICommand
     {
-        private CarDealer _dealer;
         private Car _car;
         private int _quantity;
 
-        public AddCarCommand(CarDealer dealer, Car car, int quantity)
+        public AddCarCommand(Car car, int quantity)
         {
-            _dealer = dealer;
             _car = car;
             _quantity = quantity;
         }
@@ -23,7 +21,7 @@ namespace Task10Epam
         {
             for (int i = 0; i < _quantity; i++)
             {
-                _dealer.AddCar(_car);
+                CarDealer.GetInstance().AddCar(_car);
             }
         }
     }

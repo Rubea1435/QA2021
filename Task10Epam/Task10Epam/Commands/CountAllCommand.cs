@@ -8,16 +8,13 @@ namespace Task10Epam
 {
     class CountAllCommand : ICommand
     {
-        private CarDealer _dealer;
-
-        public CountAllCommand(CarDealer dealer)
+        public CountAllCommand()
         {
-            _dealer = dealer;
         }
 
         public void Execute()
         {
-            Console.WriteLine(_dealer.GetParkSize());
+            Console.WriteLine(CarDealer.GetInstance().GetParkSize());
         }
     }
 }
