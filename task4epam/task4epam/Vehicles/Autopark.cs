@@ -32,7 +32,7 @@ namespace task4epam
             }
             else
             {
-                throw new AddException("Vehicle with the same ID is already in the park.");
+                throw new AddException($"Vehicle with ID = {vehicle.ID} is already in the park.");
             }
         }
 
@@ -54,7 +54,7 @@ namespace task4epam
             }
             else
             {
-                throw new UpdateAutoException("Vehicle with this ID doesn't exist in the park.");
+                throw new UpdateAutoException($"Vehicle with ID = {newVehicle.ID} doesn't exist in the park.");
 
             }
         }
@@ -67,7 +67,7 @@ namespace task4epam
             }
             else
             {
-                throw new RemoveAutoException("Vehicle with this ID doesn't exist in the park.");
+                throw new RemoveAutoException($"Vehicle with ID = {ID} doesn't exist in the park.");
             }
         }
     }
