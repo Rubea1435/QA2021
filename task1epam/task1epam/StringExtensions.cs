@@ -13,7 +13,7 @@
             int count = 1; // maximum letters in a row on the current iteration 
 
             if (string.IsNullOrEmpty(str))
-                maxCount = 0;
+                return maxCount = 0;
 
             for (int i = 1; i < str.Length; i++)
             {
