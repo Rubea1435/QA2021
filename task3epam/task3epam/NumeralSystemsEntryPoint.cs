@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace task3epam
 {
@@ -6,7 +7,7 @@ namespace task3epam
     {
         static void Main(string[] args)
         {
-            int number;
+            /*int number;
             int numeralSystem;
 
             if (args.Length < 2)
@@ -31,7 +32,11 @@ namespace task3epam
                     return;
                 }
             }
-            else Console.WriteLine("Incorrect input value.");
+            else Console.WriteLine("Incorrect input value.");*/
+
+            string testString = Console.ReadLine();
+            Console.WriteLine(testString.CalculateMaxSameLatinLettersInRow());
+            Console.WriteLine(testString.CalculateMaxSameDigitsInRow());
         }
     }
 }
